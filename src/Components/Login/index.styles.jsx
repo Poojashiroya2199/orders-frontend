@@ -7,6 +7,10 @@ export const LoginContainer = styled.div`
   align-items: center;
   height: 100vh;
   max-height: 100vh;
+
+  @media (max-width: 1240px) {
+    justify-content: center;
+  }
 `;
 
 export const LoginLeft = styled.div`
@@ -67,6 +71,11 @@ export const NewAccount = styled.p`
   line-height: 150%;
   display: flex;
   margin: 34px 0 40px;
+
+  @media (max-width: 1240px){
+    flex-direction: column;
+    gap: 12px;
+  }
 `;
 
 export const CreateAccount = styled(Link)`
@@ -125,6 +134,10 @@ export const LoginRight = styled.div`
   height: 100%;
   padding: 24px 45px;
   box-sizing: border-box;
+
+  @media (max-width: 1240px) {
+    display: none;
+  }
 `;
 
 export const SupportContainer = styled.button`
@@ -180,10 +193,39 @@ export const Error = styled.p`
   margin: 15px 0 0;
 `;
 
-export const ForgetPassword = styled(Link)`
-  font-size: 14px;
-  color:  #1c4532;
+export const ForgetPassword = styled.button`
+  font-size: 16px;
+  color: #1c4532;
   cursor: pointer;
-  margin: 12px 0;
+  margin: 14px 0;
+  font-weight: 700;
   text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: flex-start;
+`;
+
+export const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+`;
+
+export const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 `;

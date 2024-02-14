@@ -169,7 +169,7 @@ export const UserProvider = ({ children }) => {
       }
       if (data.code === "userNotFound") {
         setForgetPasswordError("User Not Found");
-      }
+        }
     }
   };
 
