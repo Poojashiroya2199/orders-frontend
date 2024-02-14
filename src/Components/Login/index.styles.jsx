@@ -4,6 +4,9 @@ import styled from "styled-components";
 export const LoginContainer = styled.div`
   display: flex;
   width: 100%;
+  align-items: center;
+  height: 100vh;
+  max-height: 100vh;
 `;
 
 export const LoginLeft = styled.div`
