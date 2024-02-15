@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // import Footer from "../Footer";
 import { useEffect } from "react";
 import SideBar from "../SideBar";
