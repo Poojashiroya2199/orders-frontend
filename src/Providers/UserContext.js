@@ -27,11 +27,11 @@ export const UserProvider = ({ children }) => {
     //encrypt password
     const encryptedPwd = CryptoJs.AES.encrypt(password, "login").toString();
 
-    const response = await fetch(`http://localhost:3001/api/auth/login`, {
+    const response = await fetch(`https://dark-lime-moth-wear.cyclic.app/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:3001",
+        "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
         "Access-Control-Allow-Credentials": "true",
         "Access-Control-Allow-Methods": "POST",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -46,11 +46,11 @@ export const UserProvider = ({ children }) => {
         navigate("/");
         localStorage.setItem("id", email);
 
-        const userRes = await fetch(`http://localhost:3001/api/auth/${email}`, {
+        const userRes = await fetch(`https://dark-lime-moth-wear.cyclic.app/api/auth/${email}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": `http://localhost:3001`,
+            "Access-Control-Allow-Origin": `https://dark-lime-moth-wear.cyclic.app`,
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Methods": "GET",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -81,11 +81,11 @@ export const UserProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    const response = await fetch(`http://localhost:3001/api/auth/logout`, {
+    const response = await fetch(`https://dark-lime-moth-wear.cyclic.app/api/auth/logout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:3001",
+        "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
       },
       body: JSON.stringify({ email: user.email }),
       credentials: "include",
@@ -116,11 +116,11 @@ export const UserProvider = ({ children }) => {
     ).toString();
     const userWithCiphertext = {user:userData, password: ciphertext };
 
-    const response = await fetch(`http://localhost:3001/api/auth/register`, {
+    const response = await fetch(`https://dark-lime-moth-wear.cyclic.app/api/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": `http://localhost:3001`,
+        "Access-Control-Allow-Origin": `https://dark-lime-moth-wear.cyclic.app`,
       },
       body: JSON.stringify(userWithCiphertext),
       credentials: "include",
@@ -149,12 +149,12 @@ export const UserProvider = ({ children }) => {
     ).toString();
 
     const response = await fetch(
-      `http://localhost:3001/api/auth/forgetpassword`,
+      `https://dark-lime-moth-wear.cyclic.app/api/auth/forgetpassword`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": `http://localhost:3001`,
+          "Access-Control-Allow-Origin": `https://dark-lime-moth-wear.cyclic.app`,
         },
         body: JSON.stringify({ email, newPassword: ciphertext }),
         credentials: "include",
@@ -177,12 +177,12 @@ export const UserProvider = ({ children }) => {
     const oldCiphertext = CryptoJs.AES.encrypt(oldPassword, "resetPassword").toString();
     const ciphertext = CryptoJs.AES.encrypt(newPassword, "resetPassword").toString();
     const response = await fetch(
-      `http://localhost:3001/api/auth/resetpassword`,
+      `https://dark-lime-moth-wear.cyclic.app/api/auth/resetpassword`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": `http://localhost:3001`,
+          "Access-Control-Allow-Origin": `https://dark-lime-moth-wear.cyclic.app`,
         },
         body: JSON.stringify({
           email: user.email,
@@ -207,11 +207,11 @@ export const UserProvider = ({ children }) => {
   };
 
   const updateUser = async (userDetails) => {
-    const response = await fetch(`http://localhost:3001/api/auth/updateuser`, {
+    const response = await fetch(`https://dark-lime-moth-wear.cyclic.app/api/auth/updateuser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": `http://localhost:3001`,
+        "Access-Control-Allow-Origin": `https://dark-lime-moth-wear.cyclic.app`,
       },
       body: JSON.stringify({
         email: user.email,
@@ -237,11 +237,11 @@ export const UserProvider = ({ children }) => {
   };
 
   const getUser = useCallback(async (email = user.email) => {
-    const response = await fetch(`http://localhost:3001/api/auth/${email}`, {
+    const response = await fetch(`https://dark-lime-moth-wear.cyclic.app/api/auth/${email}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:3001",
+        "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
       },
       credentials: "include",
     });
@@ -319,12 +319,12 @@ export const UserProvider = ({ children }) => {
       const email = localStorage.getItem("id");
       if (email) {
         const response = await fetch(
-          `http://localhost:3001/api/auth/${email}`,
+          `https://dark-lime-moth-wear.cyclic.app/api/auth/${email}`,
           {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": `http://localhost:3001`,
+              "Access-Control-Allow-Origin": `https://dark-lime-moth-wear.cyclic.app`,
               "Access-Control-Allow-Credentials": "true",
               "Access-Control-Allow-Methods": "POST",
               "Access-Control-Allow-Headers": "Content-Type, Authorization",

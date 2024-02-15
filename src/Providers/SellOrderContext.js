@@ -17,11 +17,11 @@ export const SellOrderProvider = ({ children }) => {
 
   const getSellOrder = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/sellOrder/${id}`, {
+      const response = await fetch(`https://dark-lime-moth-wear.cyclic.app/api/sellOrder/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "http://localhost:3001",
+          "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
           "Access-Control-Allow-Credentials": "true",
           "Access-Control-Allow-Methods": "GET",
           "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -52,12 +52,12 @@ export const SellOrderProvider = ({ children }) => {
   const getSellOrders = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/sellOrder/orders/${user.email}`,
+        `https://dark-lime-moth-wear.cyclic.app/api/sellOrder/orders/${user.email}`,
         {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:3001",
+            "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Methods": "GET",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -87,12 +87,12 @@ export const SellOrderProvider = ({ children }) => {
     const copyOrderDetails = {...orderDetails, email: user.email, phoneNumber: user.phoneNumber}
     try {
       const response = await fetch(
-        "http://localhost:3001/api/sellOrder/orderCreate",
+        "https://dark-lime-moth-wear.cyclic.app/api/sellOrder/orderCreate",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:3001",
+            "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Methods": "POST",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -120,12 +120,12 @@ export const SellOrderProvider = ({ children }) => {
   const updateSellOrder = async (id, updateOrderDetails) => {
     try {
       const response = await fetch(
-        "http://localhost:3001/api/sellOrder/orderUpdate",
+        "https://dark-lime-moth-wear.cyclic.app/api/sellOrder/orderUpdate",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:3001",
+            "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Methods": "POST",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -153,12 +153,12 @@ export const SellOrderProvider = ({ children }) => {
   const removeSellOrder = async (id) => {
     try {
       const response = await fetch(
-        "http://localhost:3001/api/sellOrder/orderRemove",
+        "https://dark-lime-moth-wear.cyclic.app/api/sellOrder/orderRemove",
         {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://localhost:3001",
+            "Access-Control-Allow-Origin": "https://dark-lime-moth-wear.cyclic.app",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Methods": "POST",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
