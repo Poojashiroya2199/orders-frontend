@@ -17,6 +17,10 @@ export const SignUpLeft = styled.aside`
   padding: 22px 30px;
   box-sizing: border-box;
   justify-content: space-evenly;
+
+  @media (max-width: 1240px) {
+    display: none;
+  }
 `;
 
 export const SignUpRight = styled.aside`
@@ -27,6 +31,13 @@ export const SignUpRight = styled.aside`
   flex-direction: column;
   padding: 50px;
   box-sizing: border-box;
+
+  @media (max-width: 1240px) {
+    width: 100%;
+    border-radius: 0;
+    justify-content: center;
+    padding: 24px;
+  }
 `;
 
 export const Logo = styled(Link)``;
@@ -40,6 +51,10 @@ export const CreateAccount = styled.h4`
   font-weight: 600;
   margin-bottom: 25px;
   align-self: center;
+
+  @media (max-width: 1240px) {
+    width: 100%;
+  }
 `;
 
 export const DetailsContainer = styled.div`
@@ -51,6 +66,10 @@ export const DetailsContainer = styled.div`
 
 export const Detail = styled.div`
   width: 50%;
+
+  @media (max-width: 1240px) {
+    width: 100%;
+  }
 `;
 
 export const Input = styled.input`
@@ -112,7 +131,7 @@ export const LoginLink = styled(Link)`
 `;
 
 export const Error = styled.p`
- color: red;
- font-size: 14px;
- margin: 15px 0 0;
+  color: red;
+  font-size: 14px;
+  margin: 15px 0 0;
 `;
